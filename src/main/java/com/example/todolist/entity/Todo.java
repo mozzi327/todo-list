@@ -1,15 +1,14 @@
 package com.example.todolist.entity;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
-@Entity(name = "TODOS")
-@Getter
-@Setter
+@Data
+@Entity
+@Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class Todo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,10 +22,4 @@ public class Todo {
 
     @Column(nullable = false)
     private boolean completed;
-
-    public Todo(String title, Long order, boolean completed) {
-        this.title = title;
-        this.order = order;
-        this.completed = completed;
-    }
 }

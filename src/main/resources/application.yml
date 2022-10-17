@@ -17,6 +17,6 @@ spring:
       data-locations: classpath*:db/h2/data.sql
 
 server:
-  servlet:
-    encoding:
-      force-response: true
+  port: 8080
+  service:
+    url: http://localhost:8090/
