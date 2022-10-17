@@ -22,3 +22,12 @@ id | title | order | completed
 ---- | ---- | ---- | ----
 1 | 운동하기 | 1 | false
 2 | 공부하기 | 2 | true
+
+---
+## 사용 기술
+<span>
+  <img src="https://img.shields.io/badge/JAVA-007396?style=for-the-badge&logo=java&logoColor=white">
+<span>
+<span>
+  <img src="https://img.shields.io/badge/Spring-6DB33F?style=for-the-badge&logo=Spring&logoColor=white">
+<span>
