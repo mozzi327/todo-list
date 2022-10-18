@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@CrossOrigin(allowedHeaders = "*")
+@CrossOrigin
 @RestController
-@RequestMapping("/")
 @RequiredArgsConstructor
 public class TodoController {
     private final TodoService todoService;
@@ -41,7 +40,7 @@ public class TodoController {
         return ResponseEntity.ok(response);
     }
 
-    @PatchMapping("/{todo-id}")
+    @PatchMapping("{todo-id}")
     public ResponseEntity updateTodo(@PathVariable("todo-id") Long id,
                                      @RequestBody TodoDto edit) {
         edit.setId(id);
@@ -51,7 +50,7 @@ public class TodoController {
         return ResponseEntity.ok(response);
     }
 
-    @GetMapping("/{todo-id}")
+    @GetMapping("{todo-id}")
     public ResponseEntity findTodo(@PathVariable("todo-id") Long id) {
         Todo findTodo = todoService.findTodolist(id);
         TodoDto response = new TodoDto(findTodo, serviceUrl);
@@ -69,7 +68,7 @@ public class TodoController {
         return ResponseEntity.ok(responses);
     }
 
-    @DeleteMapping("/{todo-id}")
+    @DeleteMapping("{todo-id}")
     public ResponseEntity deleteTodo(@PathVariable("todo-id") Long id) {
         todoService.deleteTodolist(id);
         return ResponseEntity.ok().build();
